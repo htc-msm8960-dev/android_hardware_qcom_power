@@ -113,7 +113,7 @@ static int set_power_profile(void *data)
                 profile_power_save_8064 : profile_power_save_8960;
 
         ret = perform_hint_action(DEFAULT_PROFILE_HINT_ID,
-                resource_values, ARRAY_SIZE(resource_values));
+                resource_values, sizeof(resource_values));
         profile_name = "powersave";
 
     } else if (profile == PROFILE_HIGH_PERFORMANCE) {
@@ -121,7 +121,7 @@ static int set_power_profile(void *data)
                 profile_high_performance_8064 : profile_high_performance_8960;
 
         ret = perform_hint_action(DEFAULT_PROFILE_HINT_ID,
-                resource_values, ARRAY_SIZE(resource_values));
+                resource_values, sizeof(resource_values));
         profile_name = "performance";
 
     } else if (profile == PROFILE_BALANCED) {
